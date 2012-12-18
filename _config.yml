@@ -4,3 +4,6 @@ pygments: true
 permalink: /:year/:month/:day/:title.html
 name: Gyt
 title: 轨迹
+disqus: gyt
+google_analytics: UA-23063930-2
+

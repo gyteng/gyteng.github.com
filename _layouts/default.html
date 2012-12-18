@@ -6,7 +6,7 @@
     {% if page.title %}
     <title>{{ page.title }}</title>
     {% else %}
-    <title>{{ site.title }}</title>
+    <title>{{ site.disqus }}</title>
     {% endif %}
     <link rel="shortcut icon" href="/favicon.png">
     <link href="/atom.xml" rel="alternate" title="setImpl" type="application/atom+xml" />
@@ -35,7 +35,7 @@
         {{ content }}
         </div>
         {% include google_analytics.md %}
-        <footer>&copy; 2011 ~ 2012 Gyt | powered by <a href=http://jekyllrb.com/>jekyll</a></footer>
+        <footer>&copy; 2011 ~ 2012 {{ site.name }} | powered by <a href=http://jekyllrb.com/>jekyll</a></footer>
       </div> <!-- main -->
   </body>
 </html>

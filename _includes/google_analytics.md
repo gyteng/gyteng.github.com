@@ -1,6 +1,6 @@
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-23063930-2']);
+  _gaq.push(['_setAccount', 'site.google_analytics']);
   _gaq.push(['_trackPageview']);
 
   (function() {
