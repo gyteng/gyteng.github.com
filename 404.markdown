@@ -1,8 +1,10 @@
 ---
+
 title: 404
 layout: page
+
 ---
 
-Nothing found :(
+你访问的页面不存在 ㄟ( ▔, ▔ )ㄏ
 
-But you still can have a [look around](/index.html)
+[返回首页](/index.html)
