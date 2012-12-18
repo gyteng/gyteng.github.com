@@ -1,6 +1,6 @@
 ---
 
-title: archive
+title: Archive
 layout: page
 
 ---
