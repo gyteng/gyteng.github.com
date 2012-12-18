@@ -1,0 +1,19 @@
+---
+
+layout: post
+title: "Bug"
+date: 2012-09-19 22:14
+comments: true
+
+---
+有人发现校园网认证系统一个神奇的bug，用xclient登录并在用户名后边加个空格，可以避免晚上十二点断网，并且无需续交网费。经试验路由器里的njit-client也能这样做，幸亏开学初网络中心每天缴费的人大排长龙，宿舍的网费还没来得及交，省了250元。
+
+Shell里要输入带空格的参数是个麻烦事，有人建议用__\转义符__：
+	njit-client username\  password eth1
+没有效果，用引号包着参数也不行：
+	njit-client "username " "password" "eth1"
+这会把第二个引号认作是password的部分，最后发现应该这样：
+	njit-client username+" " password eth1
+这不科学啊。
+
+10月6日，Bug被修复了，悲剧啊 T_T

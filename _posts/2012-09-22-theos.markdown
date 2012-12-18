@@ -1,0 +1,19 @@
+---
+
+layout: post
+title: "Theos"
+date: 2012-09-22 23:48
+comments: true
+ 
+---
+在学校上网是件相当痛苦的事情，不仅要开个goagent，还需要一个搜狗教育网代理，幸亏[这里](https://github.com/ayanamist/sogou-proxy)有一个python版的搜狗代理可以用。但是iPad里每次打开搜狗代理都要去终端进行，相当不方便，考虑自己把[goagent-ios](https://github.com/gyteng/goagent-ios)的sbsettings开关修改一下，用于搜狗代理。
+
+跟作者沟通之后，第二天他修改了代码，便于编译，还推荐我使用[Theos](http://iphonedevwiki.net/index.php/Main_Page)这个跨平台的iOS编译系统。
+
+搭建编译环境不是很难，照着[官网](http://iphonedevwiki.net/index.php/Theos/Getting_Started)的步骤来进行，据说支持Win/Linux/Mac/iOS。Mac下需要__额外安装dpkg-deb__用于完成打包，至于iOS SDK在xcode里已经自带了，可是我前几天手贱把它升级到xcode4.5，只剩下6.0的SDK，又下载4.4版的提取出5.1的SDK。
+
+接下来的事情就是修改几行代码，再make、make package，但安装到iPad之后发现不起作用，看google code里的[issues](https://code.google.com/p/goagent/issues/list)发现是原作者本身的问题，8月底更新的版本，然后好多人无法正常使用。算了，等这段时间忙完估计作者的bug也修了再去整它。
+
+最近晚上一直睡不好，反正都睡不着，多看点书吧。  
+明天腾讯笔试，祝我好运。  
+深圳的笔试在十月份，那只又二又呆的也要好运。

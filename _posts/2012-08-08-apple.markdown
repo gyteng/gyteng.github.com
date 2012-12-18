@@ -1,0 +1,20 @@
+---
+
+layout: post
+title: "果粉，果黑"
+date: 2012-08-08 19:51
+comments: true
+
+---
+在Windows下你问一个问题，不同的人会给你不同的解决办法。若是Linux下，一定会有个程序员（甚至是这个软件的作者）告诉你，觉得xxx不好用？自己改代码去吧，这个bug不打算修了。再看看Mac下，你会遇到__果粉__跟__果黑__，一提问题就有人喷你装逼用苹果，还不会用，回Windows去吧，要么回忆乔帮主曾说过某功能是shit，因此你肯定不需要这功能……
+
+其实我只不过想使用__睡眠__和__休眠__的功能而已，而Mac的菜单里只提供了关机、重启和睡眠三个选项，后来发现睡眠有三个模式可以切换，分别对应Windows下的睡眠、休眠和混合睡眠。可是切换需要在终端进行，非常麻烦，最终写了两个脚本解决这个蛋疼的问题。
+
+hibernatemode的0，1，3分别对应睡眠、休眠和混合睡眠。
+
+	echo "Your Password"|sudo -S pmset -a hibernatemode 1
+	osascript << EOT
+	tell application "System Events"
+	    sleep
+	end
+	EOT

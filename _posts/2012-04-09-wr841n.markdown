@@ -1,0 +1,60 @@
+---
+
+layout: post
+title: "OpenWrt for wr841n"
+date: 2012-04-09 18:32
+comments: true
+
+---
+上一周这栋楼终于采用了万恶的inode客户端，大家对于这个措施的评价（此处省略10000字），参考若干个网站终于找到了解决办法。
+
+TP-LINK WR841N v7属于OpenWRT原生支持的路由，根据[OpenWrt官网](http://wiki.openwrt.org/toh/tp-link/tl-wr841nd)的介绍，直接下载bin文件，在web管理界面升级即可。升级完毕后会自动重启，这时无线默认是关闭的，并且trunk版没有web界面的，凑合着用吧。接着telnet 192.168.1.1登陆给ssh设置密码，一旦设置密码，telnet登陆的功能就会关闭。现在就可以用ssh登陆路由器了，纯字符界面，非常Geek。
+
+接下来就是给路由安装[njit-client](https://github.com/liuqun/njit8021xclient)了，这个是Linux下inode的代替品。由于安装的时候必须联网，这里要采取一些措施。更改`/etc/opkg.conf`的第一行，把源地址改为http://192.168.1.240:4242，接着用Apache建一个web服务器，将官方源的东西下载下来，做成本地的源，然后执行opkg update刷新。然后到[这里](http://openwrt.asxzy.net/backfire/10.03.1/ar71xx/packages/)下载njit-client的包，用opkg安装，会自动安装其他的依赖包（libpcap、libopenssl、zlib），最后要把几个旧版的文件链接上去，运行
+
+	cd /usr/lib
+	ln -s libcrypto.so.1.0.0 libcrypto.so.0.9.8
+	ln -s libpcap.so.1.1.1 libpcap.so.1.0
+
+配置wan口，编辑`/etc/config/network`，增加下面一段：
+
+	config interface 'wan'
+	    option ifname 'eth1'
+	    option tpye 'bridge'
+	    option proto 'static'
+	    option ipaddr '222.16.xxx.xx'
+	    option netmask '255.255.255.0'
+	    option gateway '222.16.xx.xxx'
+	    option dns '202.112.17.33'
+	    option macaddr '6C:F0:49:xx:xx:xx'
+
+保存之后重启，登陆路由器，运行
+
+	njit-client [用户名] [密码] eth1
+
+正常情况下就可以上网了。默认情况下无线是关闭的，可以编辑`/etc/config/wireless`增加无线的功能。__断线自动重连__脚本，将下面的脚本增加到[crontab](http://www.slyar.com/blog/openwrt-crontab.html)里，每分钟执行一次
+
+	#！/bin/bash
+	ping -w 1 -c 1 202.112.17.33>/dev/null
+	ret=$?
+	if [ $ret -eq 1 ]
+	    then njit-client [username] [password] [interface]
+	fi
+
+__端口映射__的方法，在`/etc/config/firewall`增加
+
+	config redirect
+	    option src wan
+	    option src_dport 2222-3333
+	    option proto tcpudp
+	    option dest_ip 192.168.1.10
+
+编辑`/etc/config/system`增加__自动校正时间__的功能
+
+	config system
+	    option hostname 'OpenWrt'
+	    option timezone 'CST-8'
+	config timeserver 'ntp'
+	    list server 's1a.time.edu.cn'
+
+最后感谢__云长__又一次提供了路由器。另外刷机有风险，还发现有些人不公布方法来卖路由器赚钱，真黑。

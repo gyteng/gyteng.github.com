@@ -1,0 +1,6 @@
+markdown: rdiscount
+auto: true
+pygments: true
+permalink: /:year/:month/:day/:title.html
+name: Gyt
+title: 轨迹

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="pandachow" />
+    {% if page.title %}
+    <title>{{ page.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
+    <link rel="shortcut icon" href="/favicon.png">
+    <link href="/atom.xml" rel="alternate" title="setImpl" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/github.css">
+    <script type="text/javascript" src="/media/js/highlight.pack.js"></script>
+    <script type="text/javascript">
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+  <body>
+      <div id="main" role="main">
+        <header>
+          <div id="header">
+            <h1><a title="{{ site.name }}" class="" href="/">{{ site.title }}</a></h1>
+            <nav>
+              <span><a title="archive" class="" href="/archive.html">Archives</a></span>
+              <span><a title="raisuisen" class="" href="/raisuisen.html">Raisuisen</a></span>
+              <span><a title="tweets" class="" href="/tweets.html">Tweets</a></span>
+              <span><a title="about" class="" href="/about.html">About</a></span>
+              <span><a title="subscribe me" class="" href="/atom.xml">Feed</a></span>
+            </nav>
+          </div>
+        </header>
+        <div id="content">
+        {{ content }}
+        </div>
+        {% include google_analytics.md %}
+        <footer>&copy; 2011 ~ 2012 Gyt | powered by <a href=http://jekyllrb.com/>jekyll</a></footer>
+      </div> <!-- main -->
+  </body>
+</html>

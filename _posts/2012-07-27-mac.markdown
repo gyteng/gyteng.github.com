@@ -1,0 +1,15 @@
+---
+
+layout: post
+title: "Mac"
+date: 2012-07-27 12:14
+comments: true
+
+---
+换电脑了，开始不知道博客怎么迁移过来，折腾了好久。基于Github的就有这个麻烦，本地还有一份，有时候甚至搭建不起来，万恶的教育网。
+
+据说Linux用户最后都改用Mac，再也不用折腾可恶的KDE、Gnome或者Unity什么的，稳定的图形界面，纯正的Unix血统，不像Windows那样对命令行不友好。从Linux转用Mac完全不会出现不适应的情况，连根目录里边的结构都是类似的，此外，Finder比Nautilus好用，Dock比Ubuntu里的那个不知叫什么的边栏好用，Spotlight比HUD好用，就连自带的拼音输入法都比Fcitx好用……
+
+不知为何买Mac mini的人那么少，论坛里都是在讨论Macbook的，Macbook太贵了点，屏幕也不够大。能把台式机做得这么迷你已经非常不错了，连电源也在机箱里边而不是外置，偶尔外壳蛮烫，不知道冬天够不够暖手用。
+
+![Mac](/media/pic/Macmini.jpg)
