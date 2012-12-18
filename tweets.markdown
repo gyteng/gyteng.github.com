@@ -4,6 +4,9 @@ layout: page
 title: Tweets
 
 ---
+12/18  
+Jekyll比Octopress简洁多了
+
 12/16  
 广州又回到夏天了
 
