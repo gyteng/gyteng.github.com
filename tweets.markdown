@@ -4,6 +4,9 @@ layout: page
 title: Tweets
 
 ---
+12/19  
+一定要好好保护自己的梦想，这是你之所以和其他人不一样的地方
+
 12/18  
 Jekyll比Octopress简洁多了
 
