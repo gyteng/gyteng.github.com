@@ -8,7 +8,7 @@ comments: true
 ---
 据说这是Openwrt里实现快速配置的接口，可以很容易定制图形界面，可是[官方文档](http://luci.subsignal.org/trac/wiki/Documentation)的内容少得可怜，只能借助原有的几个配置文件自己摸索，还好不是很复杂。
 
-我需要把控制njit-client的图形界面给做好，有时候网络出问题而且这破手机不能用ssh登录，有网页版的界面就方便多了。照着这个[HowTo Write Modules](http://luci.subsignal.org/trac/wiki/Documentation/ModulesHowTo)的页面做即可，有时候浏览器缓存的问题会导致更新文件后网页没更新，多刷新几次就行了。
+我需要把控制njit-client的图形界面给做好，有时候网络出问题而且这破手机不能用ssh登录，有网页版的界面就方便多了。照着这个[HowTo Write Modules](http://luci.subsignal.org/trac/wiki/Documentation/ModulesHowTo)的页面做即可，有时候浏览器缓存的问题会导致更新文件后网页没更新，多刷新几次就可以了。
 
 ![Openwrt](/media/pic/openwrt-LuCI.jpg)
 
