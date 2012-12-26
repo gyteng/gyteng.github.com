@@ -1,0 +1,15 @@
+---
+
+layout: post
+title: "LuCI"
+date: 2012-12-26 21:45
+comments: true
+
+---
+据说这是Openwrt里实现快速配置的接口，可以很容易定制图形界面，可是[官方文档](http://luci.subsignal.org/trac/wiki/Documentation)的内容少得可怜，只能借助原有的几个配置文件自己摸索，还好不是很复杂。
+
+我需要把控制njit-client的图形界面给做好，有时候网络出问题而且这破手机不能用ssh登录，有网页版的界面就方便多了。照着这个[HowTo Write Modules](http://luci.subsignal.org/trac/wiki/Documentation/ModulesHowTo)的页面做即可，有时候浏览器缓存的问题会导致更新文件后网页没更新，多刷新几次就行了。
+
+![Openwrt](/media/pic/openwrt-LuCI.jpg)
+
+此外，在官网的源里安装的luci-app-wol完全不能工作，它把命令写错了，需要改成`/usr/bin/wol -v "9C:B7:0D:xx:xx:xx" -i 192.168.1.255`，发现无线网卡也能支持网络唤醒，但“[请求时唤醒](http://support.apple.com/kb/HT3774?viewlocale=zh_CN)”这功能只能在苹果的路由器下工作，为什么没人做出第三方的实现方案呢？
