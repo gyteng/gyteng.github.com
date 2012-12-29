@@ -4,6 +4,9 @@ layout: page
 title: Tweets
 
 ---
+12/29  
+学校免费的wlan很给力，而且是电信线路的
+
 12/25  
 大笨钟
 
