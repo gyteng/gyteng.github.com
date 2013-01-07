@@ -8,6 +8,9 @@ title: 2013 Tweets
 [2012]({{ site.url }}/tweets/2012) | [2013]({{ site.url }}/tweets/2013)
 
 ---
+1/7  
+祝我好运
+
 1/6  
 论文终于选好了
 
