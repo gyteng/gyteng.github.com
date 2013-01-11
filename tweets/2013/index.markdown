@@ -8,6 +8,9 @@ title: 2013 Tweets
 [2012]({{ site.url }}/tweets/2012) | [2013]({{ site.url }}/tweets/2013)
 
 ---
+1/11  
+Clash of Clans太好玩了
+
 1/7  
 祝我好运
 
