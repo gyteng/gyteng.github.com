@@ -8,6 +8,9 @@ title: 2013 Tweets
 [2012]({{ site.url }}/tweets/2012) | [2013]({{ site.url }}/tweets/2013)
 
 ---
+2/6  
+突然就想到《夺命金》了
+
 2/4  
 三年
 
