@@ -4,6 +4,6 @@ layout: page
 title: Raisuisen 
 
 ---
-=3= 这里该写什么好？
-
-![raisuisen](/media/pic/raisuisen.png)
+又想了一遍  
+你温柔的脸  
+在我忘记之前
