@@ -53,7 +53,7 @@ OpenWrt 12.09 正式版貌似出来了，但仍旧没有支持 WR720N，只好�
 	#define TL_WR720N_GPIO_BTN_SW1    18
 	#define TL_WR720N_GPIO_BTN_SW2    20
 
-后边有个函数是定义Reset按钮的，后边接着添加：
+后边有个函数是定义Reset按钮的，在函数里边接着添加：
 
 	,
 	{
@@ -73,7 +73,7 @@ OpenWrt 12.09 正式版貌似出来了，但仍旧没有支持 WR720N，只好�
 	    .active_low = 0,
 	}
 
-这只是让编译后的固件支持切换开关，具体要让它实现什么功能可以参照[官方WiKi的Button页面](http://wiki.openwrt.org/doc/howto/hardware.button)。
+注意，这只是让编译后的固件支持切换开关，具体要让它实现什么功能可以参照[官方WiKi的Button页面](http://wiki.openwrt.org/doc/howto/hardware.button)的方法。
 
 ###5.编译
 
