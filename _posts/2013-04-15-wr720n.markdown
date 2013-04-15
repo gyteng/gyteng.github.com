@@ -6,11 +6,11 @@ date: 2013-04-15 12:45
 comments: true
 
 ---
-OpenWrt 12.09 正式版貌似出来了，但还是没有支持 WR720N，只好自己编译了，幸亏有硬件类似的 WR703N，再参考[这篇文章](http://www.zoublog.com/technology/compile-openwrt-unofficial-wr720n.html)总算解决了问题。
+OpenWrt 12.09 正式版貌似出来了，但仍旧没有支持 WR720N，只好自己编译了，幸亏有硬件类似的 WR703N，再参考[这篇文章](http://www.zoublog.com/technology/compile-openwrt-unofficial-wr720n.html)总算解决了问题。
 
 [官方编译教程](http://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence)提到有可能在 BSD 或 OS X 里编译，我试了不成功，还是用虚拟机吧。Debian可以选择不安装图形界面，通过SSH连接即可。
 
-####1.下载源码
+###1.下载源码
 
 先把源码下载下来，并更新：
 
@@ -18,7 +18,7 @@ OpenWrt 12.09 正式版貌似出来了，但还是没有支持 WR720N，只好�
 	./scripts/feeds update -a
 	./scripts/feeds install -a
 
-####2.替换字符串
+###2.替换字符串
 
 更新完后，需要把各种文件里关于WR703N的字符串改成WR720N，这里用grep命令：
 
@@ -26,7 +26,7 @@ OpenWrt 12.09 正式版貌似出来了，但还是没有支持 WR720N，只好�
 
 会列出大约十多个文件，理论上可以用sed来修改，但我还没熟练掌握sed的用法，为了避免改错还是人肉修改吧。此外，还需要把关于路由的文件头信息改了，将WR703相关的07030101改成07200103，以及070300改成072001，同样是先用grep查找。最后将文件`./target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr703n.c`改名。
 
-####3.添加网口
+###3.添加网口
 
 修改`./target/openwrt/ar71xx/base-files/etc/uci-defaults/network`来添加一个网口，找到WR720N相关的这一行：
 
@@ -46,7 +46,7 @@ OpenWrt 12.09 正式版貌似出来了，但还是没有支持 WR720N，只好�
 	ath79_register_eth(1);
 	ath79_register_wmac(ee, mac);
 	
-####4.添加模式切换开关
+###4.添加模式切换开关
 
 路由器上的AP/3G/Route开关实际是包含两个按钮，三个状态。编辑`./target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr720n.c`，添加两行：
 
@@ -75,9 +75,9 @@ OpenWrt 12.09 正式版貌似出来了，但还是没有支持 WR720N，只好�
 
 这只是让编译后的固件支持切换开关，具体要让它实现什么功能可以参照[官方WiKi的Button页面](http://wiki.openwrt.org/doc/howto/hardware.button)。
 
-####5.编译
+###5.编译
 
-现在可以编译了，注意不能使用root账户编译。`make menuconfig`会检查缺少的包，依次安装既可。Linux下不同发行版的相同软件包名字可能不一样，这是个蛋疼的问题，比如提示缺少`ncurses`，Debian下需要安装`libncurses5-dev`而Fedora里是`ncurses-devel`。
+现在可以编译了，注意不能使用root账户编译。`make menuconfig`会检查缺少的包，依次安装既可。Linux下不同发行版的相同软件包名字可能不一样，这是个蛋疼的问题，比如提示缺少`ncurses`，Debian下需要安装`libncurses5-dev`而Fedora里是`ncurses-devel`。编译前会下载各种包，请保持网络通畅。
 
 如果要使用Wallproxy，需要自己编译python-gevent，幸亏已经有人把[Makefile](https://wallproxy.googlecode.com/files/sdk_mf.zip)写好了，下载后放到`./package/`的自定义文件夹中，软件包可以单独编译：
 
