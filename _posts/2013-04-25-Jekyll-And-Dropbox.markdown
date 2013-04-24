@@ -6,4 +6,6 @@ date: 2013-04-25 00:15
 comments: true
 
 ---
-每次都要打开github来push是件麻烦的事情
+Jekyll写完每次都要打开github来push是件麻烦的事情，正好今天申请了亚马逊免费的EC2，考虑可以将push的事情交给它。
+
+首先安装命令行版的Dropbox，
