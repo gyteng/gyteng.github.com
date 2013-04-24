@@ -84,4 +84,4 @@ OpenWrt 12.09 正式版貌似出来了，但仍旧没有支持 WR720N，只好�
 	make package/greenlet/compile V=99
 	make package/gevent/compile V=99
 
-当然，也可以下载我编译好的[ar71xx版的gevent](https://www.dropbox.com/s/zykgadjqce7rmjj/gevent_ar71xx.zip)。
+当然，也可以下载我编译好的[ar71xx版的gevent](https://www.dropbox.com/s/zykgadjqce7rmjj/gevent_ar71xx.zip)。 D
