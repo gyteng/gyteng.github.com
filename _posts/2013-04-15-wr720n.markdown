@@ -79,6 +79,8 @@ OpenWrt 12.09 正式版貌似出来了，但仍旧没有支持 WR720N，只好�
 
 现在可以编译了，注意不能使用root账户编译。`make menuconfig`会检查缺少的包，依次安装既可。Linux下不同发行版的相同软件包名字可能不一样，这是个蛋疼的问题，比如提示缺少`ncurses`，Debian下需要安装`libncurses5-dev`而Fedora里是`ncurses-devel`。编译前会下载各种包，请保持网络通畅。每次编译都要花半个多小时，在虚拟机里我都把4个内核用上了，不知道如果不采用虚拟机时间会不会有明显缩短。
 
+需要挂载U盘的话，得手工添上kmod-usb-storage kmod-usb-storage-extras kmod-fs-ext4 kmod-fs-vfat block-mount等包，不建议是用ntfs格式。
+
 如果要使用Wallproxy，需要自己编译python-gevent，幸亏已经有人把[Makefile](https://wallproxy.googlecode.com/files/sdk_mf.zip)写好了，下载后放到`./package/`的自定义文件夹中，软件包可以单独编译：
 
 	make package/greenlet/compile V=99
