@@ -3,7 +3,7 @@ auto: true
 pygments: true
 permalink: /:year/:month/:day/:title.html
 name: Gyt
-url: http://gyteng.info
+url: http://gyteng.com
 email: igyteng@gmail.com
 title: 轨迹
 disqus: gyt
