@@ -1,9 +1,0 @@
----
-
-layout: post
-title: "Rai"
-date: 2013-06-16 08:26
-comments: true
-
----
-突然想到某件事情，眼泪就哗哗地留下来。
