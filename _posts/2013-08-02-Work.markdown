@@ -1,0 +1,15 @@
+---
+
+layout: post
+title: "上班"
+date: 2013-08-02 21:44
+comments: true
+
+---
+在上班之前，我曾经以为工作环境应该是这样的：
+
+![workspace1](/media/pic/workspace1.jpg)
+
+但现实如此残酷，而且那台电脑还是我自己带的：
+
+![workspace2](/media/pic/workspace2.jpg)
