@@ -6,7 +6,7 @@ date: 2013-08-02 21:44
 comments: true
 
 ---
-在上班之前，我曾经一位工作环境应该是这样的：
+在上班之前，我曾经以为工作环境应该是这样的：
 
 ![workplace1](/media/pic/workplace1.jpg)
 
