@@ -1,0 +1,13 @@
+---
+
+layout: post
+title: "喵"
+date: 2013-08-25 22:01
+comments: true
+
+---
+跟室友收养了一只小猫，很萌，毛发很长的品种。
+
+突然想起那只黑猫，不知道它过得如何。
+
+![cat](/media/pic/cat002.jpg)
