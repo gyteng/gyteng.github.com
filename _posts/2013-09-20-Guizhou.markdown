@@ -1,9 +1,0 @@
----
-
-layout: post
-title: "贵州"
-date: 2013-09-20 21:17
-comments: true
-
----
-贵州真是个蛋疼的地方
