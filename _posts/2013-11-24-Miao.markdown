@@ -1,0 +1,14 @@
+---
+
+layout: post
+title: "喵"
+date: 2013-11-24 23:03
+comments: true
+
+---
+这货越来越萌了
+
+![](/media/pic/miao01.jpg)
+
+
+![](/media/pic/miao02.jpg)
