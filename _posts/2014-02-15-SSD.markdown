@@ -1,0 +1,17 @@
+---
+
+layout: post
+title: "SSD"
+date: 2014-02-15 15:54
+comments: true
+
+---
+给Mac mini增加了一块SSD，照着网上的拆机视频做，没有想象中的困难，用T6和T8的螺丝刀就可完成，比较郁闷的是硬盘线稍贵。
+
+最重要的一步是拆机之前先把猫锁在屋外。
+
+开机速度真是飞快，极大改善了生活质量。
+
+![SSD](/media/pic/ssd01.jpg)
+
+![SSD](/media/pic/ssd02.jpg)
