@@ -1,0 +1,8 @@
+---
+
+layout: post
+title: "KVM虚拟机"
+date: 2014-03-27 00:06
+comments: true
+
+---
