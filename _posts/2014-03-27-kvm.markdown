@@ -1,0 +1,20 @@
+---
+
+layout: post
+title: "KVM虚拟机"
+date: 2014-03-27 00:06
+comments: true
+
+---
+最近给公司的一台服务器加了80G内存，装个虚拟机使用。
+
+首先安装一堆相关的东西：
+
+	sudo apt-get install ubuntu-virt-server python-vm-builder kvm-ipxe virtinst libcap2-bin bridge-utils
+
+再把用户加入相应的组：
+
+	sudo adduser `id -un` libvirtd
+	sudo adduser `id -un` kvm
+
+修改网络配置文件`/etc/network/interface`，类似
