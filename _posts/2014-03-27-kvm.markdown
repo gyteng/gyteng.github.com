@@ -1,9 +1,0 @@
----
-
-layout: post
-title: "KVM虚拟机"
-date: 2014-03-27 00:06
-comments: true
-
----
-最近给公司的一台服务器加了80G内存，装个虚拟机使用。
