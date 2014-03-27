@@ -1,0 +1,57 @@
+---
+
+layout: post
+title: "KVM虚拟机"
+date: 2014-03-27 00:06
+comments: true
+
+---
+最近给公司的一台服务器加了80G内存，装几个虚拟机使用。
+
+首先安装一堆相关的东西：
+
+	sudo apt-get install ubuntu-virt-server python-vm-builder kvm-ipxe virtinst libcap2-bin bridge-utils
+
+再把用户加入相应的组：
+
+	sudo adduser `id -un` libvirtd
+	sudo adduser `id -un` kvm
+
+修改网络配置文件`/etc/network/interface`，增加一个br0，类似于这样：
+
+	auto eth0
+	iface eth0 inet manual
+ 
+	auto br0
+	iface br0 inet static
+		address 192.168.1.130
+		netmask 255.255.255.0
+		gateway 192.168.1.1
+		dns-nameservers 192.168.1.1
+		bridge_ports eth0
+		bridge_fd 9
+		bridge_hello 2
+		bridge_maxage 12
+		bridge_stp off
+	
+然后这里估计有个bug，光重启networking服务不行，需要重启系统，否则装好虚拟机后网络是不通的。我偷懒没有重启结果折腾了很久。
+
+接下来可以安装虚拟机了，先创建一个硬盘镜像文件：
+
+	sudo qemu-img create -f qcow2 ~/virUbuntu.img 60G
+	
+然后配置各种参数启动虚拟机：
+
+	sudo virt-install \
+	--name ubuntu-server1 \
+	--ram 4096 \
+	--vcpus=2 \
+	--check-cpu \
+	--os-type=linux \
+	-c ~\ubuntu.iso \
+	--disk path=virUbuntu.img, device=disk, bus=ide, format=qcow2 \
+	--bridge=br0 \
+	--vnc --vncport=5901 \
+	--vnclisten=0.0.0.0
+	
+现在打开vnc连接5901端口就可以安装系统了。不知为何我用系统自带的vnc客户端无法连上去，用Chrome的VNC Viewer倒可以。
