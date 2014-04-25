@@ -9,3 +9,5 @@ comments: true
 买了台相机，因此笨猫成了模特。
 
 ![Miao](/media/pic/miao05.jpg)
+
+![Miao](/media/pic/miao06.jpg)
