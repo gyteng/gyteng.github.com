@@ -1,0 +1,11 @@
+---
+
+layout: post
+title: "相机"
+date: 2014-04-20 19:27
+comments: true
+
+---
+买了台相机，因此笨猫成了模特。
+
+![Miao](/media/pic/miao05.jpg)
