@@ -1,0 +1,9 @@
+---
+
+layout: post
+title: "小偷"
+date: 2014-04-25 23:22
+comments: true
+
+---
+诸事不顺啊，一周之内被偷走两部手机。
