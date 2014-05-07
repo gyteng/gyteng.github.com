@@ -1,0 +1,26 @@
+---
+
+layout: post
+title: "Git"
+date: 2012-12-02 11:06
+comments: true
+
+---
+最好的版本管理器，没有之一。上手也很容易，先按照[git简易指南](http://rogerdudler.github.com/git-guide/index.zh.html)再慢慢深入即可，还有进阶的[progit](http://git-scm.com/2010/06/09/pro-git-zh.html)可以参考。如果人也可以采用版本管理器就好了，给自己创造几个分支再把有用的合并。
+
+校园网里用github很麻烦，首先不能用它默认的git协议，没法调用代理，必须替换成`https://github.com/xxxx/oooo.github.com.git`的格式，再用`git config`添加http代理或者修改`./.git/config`搞定，不过这样就无法采用ssh密钥认证，每次push都要输入密码，当然可以用expect来解决自动输入用户名密码的问题：
+
+	read -a gyt -p git_commit:
+	cd ~/Documents/jekyll
+	git add .
+	git commit -m $gyt
+	var=$(expect -c '
+	     spawn git push
+	     expect "Username"
+	     send "my_username\r"
+	     expect "Password"
+	     send "my_password\r"
+	     expect eof
+	     ')
+
+注意末尾的`\r`。
