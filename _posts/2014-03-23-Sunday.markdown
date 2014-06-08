@@ -8,4 +8,5 @@ comments: true
 ---
 好像突然有了软肋，也突然有了铠甲。
 
-![sunday](/media/pic/sunday.jpg)
+!<--![sunday](/media/pic/sunday.jpg)
+-->
