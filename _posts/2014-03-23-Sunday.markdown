@@ -1,0 +1,12 @@
+---
+
+layout: post
+title: "无题"
+date: 2014-03-23 21:27
+comments: true
+
+---
+好像突然有了软肋，也突然有了铠甲。
+
+<!--![sunday](/media/pic/sunday.jpg)
+-->
