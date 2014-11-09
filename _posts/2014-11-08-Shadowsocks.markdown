@@ -6,7 +6,7 @@ date: 2014-11-08 22:35
 comments: true
 
 ---
-最近要把Shadowsocks共享给几个人使用，必须作一些流量限制。已经有人做好了[带流量限制功能的Shadowsocks](https://github.com/mengskysama/shadowsocks/tree/manyuser)，但这是通过改变服务端来实现的，不够简洁还要安装MySQL。查了下相关的东西发觉这需求可以用iptables来实现：
+最近要把Shadowsocks共享给几个人使用，必须作一些流量限制。已经有人做好了[带流量限制功能的Shadowsocks](https://github.com/mengskysama/shadowsocks/tree/manyuser)，但这是通过改变服务端来实现的，不够简洁并且需要安装MySQL。查了下相关的东西发觉这需求可以用iptables来实现：
 
 	PORT=12345
 
@@ -47,3 +47,5 @@ comments: true
 	done
 
 这是个简单粗暴的解决方案，先启动Shadowsocks，并记录pid，一旦检测到超流量就kill，每天凌晨三点重置流量计数器。
+
+接下来的事情就是整复杂一点，做个网页管理界面什么的……
