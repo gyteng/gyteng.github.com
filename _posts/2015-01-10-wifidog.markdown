@@ -1,0 +1,20 @@
+---
+
+layout: post
+title: "wifidog"
+date: 2014-01-10 21:27
+comments: true
+
+---
+不少人手机安装了诸如“wifi万能钥匙”之类的wifi密码共享软件，非常头疼，经常有朋友来访告诉他家里的wifi密码后，就被共享出去了。但是经常改密码又稍显麻烦，最近发现有[wifidog](http://dev.wifidog.org/)这个东西可以实现类似许多餐厅的那种效果，登录之后自动跳转到一个认证页面，输入正确的密码再上网：
+
+[wifidog](/media/pic/wificat.jpg)
+
+不过这东西是不带服务端的，也有其他人写好的服务端可用，但自己写一个效果会更好，还能定制许多东西。于是新建了一个[wificat](https://github.com/gyteng/wificat)项目，用nodejs和bootstrap搞定。
+
+目前仅有一个输入密码认证的功能，预计会增加：
+
+* 黑白名单功能
+* 生成带超时时间的密码
+* 图形化后台管理界面
+* 定制跳转页面
