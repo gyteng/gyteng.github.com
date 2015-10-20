@@ -1,0 +1,9 @@
+---
+
+layout: post
+title: "CoreOS"
+date: 2015-10-10 19:35
+comments: true
+
+---
+最近一直在尝试Docker，于是注意到这个CoreOS。
