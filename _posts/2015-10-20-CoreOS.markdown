@@ -6,4 +6,44 @@ date: 2015-10-10 19:35
 comments: true
 
 ---
-最近一直在尝试Docker，于是注意到这个CoreOS。
+最近一直在尝试Docker，于是注意到这个[CoreOS](https://coreos.com)。
+
+安装方式比较特别，首先到[这里](https://coreos.com/os/docs/latest/booting-with-iso.html)下载镜像文件，在虚拟机里用这个镜像启动，启动后就是一个完整的系统，不过是只读的，我们要先把它安装在硬盘里。
+
+先根据[这个指南](https://coreos.com/os/docs/latest/cloud-config.html)创建一个cloud-config.yaml文件，内容如下：
+
+
+	#cloud-config
+	hostname: core4
+
+	coreos:
+	  etcd:
+	    discovery: https://discovery.etcd.io/<mytoken>
+	    addr: 192.168.10.9:4001
+	    peer-addr: 192.168.10.9:7001
+	  fleet:
+	    public-ip: 192.168.10.9
+	  units:
+	    - name: etcd.service
+	      command: start
+	    - name: fleet.service
+	      command: start
+	    - name: static.network
+	      content: |
+	        [Match]
+	        Name=enp0s3
+
+	        [Network]
+	        Address=192.168.10.9/24
+	        Gateway=192.168.10.1
+	        DNS=192.168.10.1
+	users: 
+	    - name: core
+	      ssh-authorized-keys:
+	        - ssh-rsa 
+
+	    - groups:
+	        - sudo
+	        - docker
+
+然后执行`coreos-install -d /dev/sda -c ./cloud-config.yaml`，安装过程中会联网下载最新版的镜像文件，若干分钟后装好重启就能用了。
