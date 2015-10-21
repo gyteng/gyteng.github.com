@@ -8,6 +8,8 @@ comments: true
 ---
 最近一直在尝试Docker，于是注意到这个[CoreOS](https://coreos.com)。
 
+###1.安装
+
 安装方式比较特别，首先到[这里](https://coreos.com/os/docs/latest/booting-with-iso.html)下载镜像文件，在虚拟机里用这个镜像启动，启动后就是一个完整的系统，不过是只读的，我们要先把它安装在硬盘里。
 
 先根据[这个指南](https://coreos.com/os/docs/latest/cloud-config.html)创建一个cloud-config.yaml文件，内容如下：
@@ -47,3 +49,7 @@ comments: true
 	        - docker
 
 然后执行`coreos-install -d /dev/sda -c ./cloud-config.yaml`，安装过程中会联网下载最新版的镜像文件，若干分钟后装好重启就能用了。
+
+###2.集群
+
+CoreOS默认安装了etcd和fleet，组集群的方式有多种：
