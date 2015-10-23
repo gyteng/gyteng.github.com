@@ -54,6 +54,14 @@ comments: true
 
 CoreOS默认安装了etcd和fleet，组集群的方式有多种：
 
-####1.
+1.
 
 每台机的配置文件配置相同的`discovery: https://discovery.etcd.io/<mytoken>`，这个token值可以到[这个地址](https://discovery.etcd.io/new)获取新的。
+
+2.
+
+主机上只需配置address和peer-address，其他的机器上增加一个peers指向主机的peer-address。
+
+3.
+
+另外还有其他的方式比较复杂，我也没有尝试。
