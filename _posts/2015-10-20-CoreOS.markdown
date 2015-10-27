@@ -59,3 +59,6 @@ CoreOS默认安装了etcd和fleet，组集群的方式有多种：
 * 主机上只需配置address和peer-address，其他的机器上增加一个peers指向主机的peer-address。
 
 * 另外还有其他的方式比较复杂，我也没有尝试。
+
+###3.启动一个容器
+
