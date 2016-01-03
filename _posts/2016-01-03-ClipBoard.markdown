@@ -2,7 +2,7 @@
 
 layout: post
 title: "跨设备同步"
-date: 2015-01-03 10:15
+date: 2016-01-03 10:15
 comments: true
 
 ---
