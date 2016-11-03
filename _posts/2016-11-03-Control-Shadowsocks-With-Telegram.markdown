@@ -64,3 +64,7 @@ ssmgr -c tg.yml
 * `flow2hour` 查看2小时内产生的流量
 
 更多功能就不一一列举了，可输入`help`查看具体的命令和参数，文档请[参见这里](https://github.com/shadowsocks/shadowsocks-manager/blob/master/plugins/telegram/README.md)。
+
+![Telegram01](https://github.com/shadowsocks/shadowsocks-manager/blob/master/plugins/telegram/screenshot/telegram01.png)
+
+![Telegram02](https://github.com/shadowsocks/shadowsocks-manager/blob/master/plugins/telegram/screenshot/telegram02.png)
