@@ -87,3 +87,9 @@ self.addEventListener('fetch', function(event) {
 [https://ooxx.gyteng.com](https://ooxx.gyteng.com)
 
 首次打开页面以后，把网络关掉再次打开，就不会出现Chrome的小恐龙了。
+
+![serviceworker0](/media/pic/serviceworker0.jpg)
+
+打开Chrome的调试工具，在`Application -> ServiceWorker`一栏可以看到已经成功启用。
+
+![serviceworker1](/media/pic/serviceworker1.jpg)
