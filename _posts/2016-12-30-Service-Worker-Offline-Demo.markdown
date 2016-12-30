@@ -37,8 +37,8 @@ var onlineCacheUrl = [
 ];
 ```
 
+删除过期的缓存
 ```
-// 删除过期的缓存
 this.addEventListener('activate', function(event) {
   var cacheWhitelist = [ONLINE_CACHE_NAME];
 
@@ -67,6 +67,7 @@ self.addEventListener('install', function(event) {
 });
 ```
 
+下面这个`fetch`事件是最重要的，这相当于一个本地的代理服务器，所有的请求都会经过这里，然后把缓存里存在的东西原样返回，缓存里没有的东西从服务器获取再返回。
 ```
 self.addEventListener('fetch', function(event) {
   event.respondWith(
@@ -80,3 +81,9 @@ self.addEventListener('fetch', function(event) {
   );
 });
 ```
+
+最后还有一点，除了本地调试的`localhost`以外，只有https的页面才能采用`service worker`。可以参考这个例子：
+
+[https://ooxx.gyteng.com](https://ooxx.gyteng.com)
+
+首次打开页面以后，把网络关掉再次打开，就不会出现Chrome的小恐龙了。
