@@ -84,9 +84,9 @@ self.addEventListener('fetch', function(event) {
 });
 ```
 
-最后还有一点，除了本地调试的`localhost`以外，只有https的页面才能采用`service worker`。可以参考这个例子：
+最后还有一点，除了本地调试用的`localhost`以外，只有https的页面才能采用`service worker`。可以参考这个最简单的demo：
 
-[https://ooxx.gyteng.com](https://ooxx.gyteng.com)
+[service-worker-demo](https://github.com/gyteng/service-worker-demo/blob/master/demo/simple/index.html)
 
 首次打开页面以后，把网络关掉再次打开，就不会出现Chrome的小恐龙了。
 
