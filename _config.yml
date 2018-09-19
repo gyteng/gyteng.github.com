@@ -1,5 +1,5 @@
 markdown: rdiscount
-highlighter: pygments
+highlighter: rouge
 permalink: /:year/:month/:day/:title.html
 name: Gyt
 url: http://gyteng.com
